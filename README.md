@@ -1,25 +1,31 @@
-# Sprint-3 : se llevara a cabo la modificacion de la app eliminado opciones redundantes y desarrollando un entorno de gambling 
-Este sprint, nuestro equipo de desarrollo se enfocara en implementar mejoras en el diseño ya hecho y agregando nuevas funciones a cada vista ademas de mantener un app mas segura
-## Vista Opcion - Mercado 
-Se quiere que cuando se ingrese a esta vista tenga el titulo de la vista.
-- **Lupa:** Implementacion de una funcion de busqueda donde se desea que tenga la opcion de autocompletar
-- **Modificacion:** Se requiere trabajar en mejoras de manera visual a lo ya hecho teniendo una extensa lista de monedas con sus respectivo valor y su icono.
-- **Topbar:** Se Requiere mnejorar esta opcion 
+## Punto 1
 
-## Vista Opcion - Cartera
-Se quiere que cuando se ingrese a esta vista tenga el titulo de la vista.
-- **Grafico:** Implementacion de un grafico dando porcentajes de las monedas obtenidas
-- **Saldo:** Implementacion de nueva funcionalidad
-- **Lista de moneda:** implementacion de la lista de monedas en cartera
+- en la carpeta infobinance: GetCryptoPrices y GetSingleCryptoPrice obtenemos los precios de todas las monedas y de una moneda.
+- en la carpeta hhtprequest: HandleCryptoPrices Esta función maneja las solicitudes a la ruta /cryptoprices y los datos obtenidos de GetCryptoPrices los convierte en formato JSON y HandleCryptoPrices Esta función maneja las solicitudes a la ruta /cryptoprice (en singular) y los datos obtenidos de GetSingleCryptoPrice los convierte en formato JSON
 
-## Vista opcion - Usuario
-- **Mejorar:** Se busca terminar la vista aplicando mejoras significativas
+## punto 2
 
-## Vista opcion - Boton logo 
+- para iniciar el proyecto solo go run .
+- una vez iniciado use alguna de las url de ejemplo para optener todas las monedas o una
 
-- **Opciones:** se implementaran 2 botones unicos 
-1. **Opcion loot gratis:** se implementara una nueva pagina donde se econtrara una caja con su valor
-2. **Opcion loot pagada:** se implementara una nueva pagina donde se econtrara una caja con su valor
+- en la carpeta handlers:
+  /\*
+  func Handlerfuns() {
+  //Obtenemos todos los precios de las criptos ejemplo: http://localhost:8080/cryptoprices
+  http.HandleFunc("/cryptoprices", handleCryptoPrices)
 
-## Funcionalidad notificaciones 
-Se requiere generar notificacion en la app para atraer mejor atencion .
+      //Obtenemos solo una moneda ejemplo http://localhost:8080/cryptoprice?symbol=BTCUSDT
+      http.HandleFunc("/cryptoprice", handleSingleCryptoPrice)
+
+      puerto := ":8080"
+      log.Printf("Servidor en ejecución en http://localhost%s\n", puerto)
+      log.Fatal(http.ListenAndServe(puerto, nil))
+
+}
+\*/
+
+## punto 3
+
+- solo tiene 2 librerias
+  -go get github.com/adshao/go-binance/v2
+  -go get github.com/joho/godotenv
